@@ -1,6 +1,7 @@
 var Table = require('cli-table');
+
 var table = new Table({
-    head: ['^^', 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    head: ['╰(▔∀▔)╯', 0, 1, 2, 3, 4, 5, 6, 7, 8],
     chars: {
         top: '═',
         'top-mid': '╤',
@@ -40,12 +41,13 @@ function solve(boardString) {}
 function isSolved() {}
 
 function prettyBoard(solvedArr) {
-    solvedArr.forEach((el, i) => {
-        table.push({ [i + 1]: el });
-    });
-
+    for (let i = 0; i < solvedArr.length; i += 1) {
+        table.push({ [i]: solvedArr[i] });
+    }
     console.log(table.toString());
 }
+
+prettyBoard(solvedArr);
 
 // Экспортировать функции для использования в другом файле (например, readAndSolve.js).
 module.exports = {
